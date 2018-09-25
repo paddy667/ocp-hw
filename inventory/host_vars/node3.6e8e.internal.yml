@@ -1,0 +1,7 @@
+---
+
+openshift_hostname: node3.6e8e.internal  
+openshift_node_labels: 
+  env: 'app' 
+  cluster: '6e8e'
+

@@ -1,0 +1,6 @@
+---
+
+openshift_hostname: master2.6e8e.internal
+openshift_node_labels: 
+  env: 'master' 
+  cluster: '6e8e'

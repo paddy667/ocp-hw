@@ -1,0 +1,7 @@
+---
+- hosts: seed-hosts[0]
+  become: True
+
+  roles:
+    - {role: openshift-applier}
+    - {role: openshift-label}

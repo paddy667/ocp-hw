@@ -1,0 +1,6 @@
+---
+
+openshift_hostname: infranode2.6e8e.internal
+openshift_node_labels: 
+  env: 'infra' 
+  cluster: '6e8e'

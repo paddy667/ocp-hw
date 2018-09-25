@@ -1,0 +1,53 @@
+[OSEv3:vars]
+
+###########################################################################
+### Ansible Vars
+###########################################################################
+timeout=60
+ansible_become=yes
+ansible_ssh_user=ec2-user
+
+###########################################################################
+### OpenShift Hosts
+###########################################################################
+[OSEv3:children]
+lb
+masters
+etcd
+nodes
+nfs
+
+[lb]
+loadbalancer1.6e8e.internal
+
+[masters]
+master1.6e8e.internal
+master2.6e8e.internal
+master3.6e8e.internal
+
+[etcd]
+master1.6e8e.internal
+master2.6e8e.internal
+master3.6e8e.internal
+
+[nodes]
+## These are the masters
+master1.6e8e.internal 
+master2.6e8e.internal
+master3.6e8e.internal
+
+## These are infranodes
+infranode1.6e8e.internal 
+infranode2.6e8e.internal
+
+## These are regular nodes
+node1.6e8e.internal
+node2.6e8e.internal
+node3.6e8e.internal
+node4.6e8e.internal
+
+[nfs]
+support1.6e8e.internal
+
+[seed-hosts]
+master1.6e8e.internal

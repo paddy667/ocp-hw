@@ -1,0 +1,9 @@
+---
+
+- hosts: nfs
+  gather_facts: True
+  become: True
+
+  roles:
+    - { role: nfs }
+

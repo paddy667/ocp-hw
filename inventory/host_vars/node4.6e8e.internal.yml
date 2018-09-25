@@ -1,0 +1,7 @@
+---
+
+penshift_hostname: node4.6e8e.internal
+openshift_node_labels:
+  env: app 
+  cluster: '6e8e'
+
