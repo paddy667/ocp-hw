@@ -46,7 +46,7 @@ def check_file_location(path, tmp_inv_dir):
     # default return values
     return_vals = {
         "oc_option_f":  '-f',
-        "oc_file_path": "%s%s" % (tmp_inv_dir, path),
+        "oc_file_path": path,
         "oc_process_local": ''
     }
 

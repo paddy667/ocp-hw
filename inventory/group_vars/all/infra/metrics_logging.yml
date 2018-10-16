@@ -8,6 +8,7 @@
 
 openshift_metrics_install_metrics: 'True' 
 
+
 openshift_metrics_storage_kind: 'nfs' 
 openshift_metrics_storage_access_modes: 
   - 'ReadWriteOnce' 
@@ -26,28 +27,30 @@ openshift_metrics_heapster_nodeselector:
   env: "infra"
 
 # Enable cluster logging
+openshift_logging_install_logging: 'True'  
+openshift_logging_use_ops: 'True' 
 
-openshift_logging_install_logging: 'True' 
+openshift_logging_es_cluster_size: 3 
+openshift_logging_es_number_of_replicas: 2 
 
-openshift_logging_storage_kind: 'nfs'
-openshift_logging_storage_access_modes: 
-  - 'ReadWriteOnce'
-openshift_logging_storage_nfs_directory: '/srv/nfs' 
-openshift_logging_storage_host: 'support1.6e8e.internal'
-openshift_logging_storage_nfs_options: '*(rw,root_squash)' 
-openshift_logging_storage_volume_name: 'logging'
-openshift_logging_storage_volume_size: '10Gi' 
-openshift_logging_storage_labels: 
-  storage: "logging" 
+openshift_logging_es_ops_cluster_size: 3 
+openshift_logging_es_ops_number_of_replicas: 2 
 
-# openshift_logging_kibana_hostname: kibana.apps.9e95.example.opentlc.com
-openshift_logging_es_cluster_size: 1
+# Run Elasticsearch, Kibana and the Curator on the Infra Nodes 
+openshift_logging_es_nodeselector:  
+  env: "infra" 
+openshift_logging_kibana_nodeselector:  
+  env: "infra" 
+openshift_logging_curator_nodeselector:  
+  env: "infra"  
 
-openshift_logging_es_nodeselector: 
-  env: "infra"
-openshift_logging_kibana_nodeselector: 
-  env: "infra"
-openshift_logging_curator_nodeselector: 
+# Run Elasticsearch Ops, Kibana Ops and the Curator Ops on the Infra Nodes 
+openshift_logging_es_ops_nodeselector:  
+  env: "infra" 
+openshift_logging_kibana_ops_nodeselector:  
+  env: "infra" 
+openshift_logging_curator_ops_nodeselector:  
   env: "infra" 
 
 openshift_metrics_image_version: v3.9
+openshift_logging_es_memory_limit: 1G

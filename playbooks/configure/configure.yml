@@ -1,5 +1,5 @@
 ---
-- hosts: seed-hosts[0]
+- hosts: localhost
   become: True
 
   roles:

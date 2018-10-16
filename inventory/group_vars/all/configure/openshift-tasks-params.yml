@@ -1,0 +1,5 @@
+openshift_tasks_params:
+  APPLICATION_NAME: 'openshift-tasks'
+  BUILDCONFIG_NAME: 'tasks-bc'
+  SOURCE_URL: 'https://github.com/paddy667/openshift-tasks.git'
+  SOURCE_REF: 'master'
